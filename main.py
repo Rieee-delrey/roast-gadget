@@ -8,6 +8,9 @@ def main():
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(LINE)
+    with open("/output/entry.txt", "r", encoding="utf-8") as f:
+        written = f.read()
+    assert written == LINE, "entry.txt does not match the entry line"
 
 if __name__ == "__main__":
     main()
